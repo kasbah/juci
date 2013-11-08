@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="ImVJxR" name="juci" projectType="consoleapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.juci" includeBinaryInAppConfig="1"
+              jucerVersion="3.1.0">
+  <MAINGROUP id="mjPPjY" name="juci">
+    <GROUP id="{5860F81F-477D-C6D6-63FC-71FEFA406928}" name="Source">
+      <FILE id="CPLIpG" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <LINUX_MAKE targetFolder="Builds/Linux">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="juci"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="2"
+                       targetName="juci"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_ALSA="enabled" JUCE_JACK="enabled"/>
+</JUCERPROJECT>
