@@ -38,13 +38,17 @@ void myCallback::audioDeviceIOCallback (const float ** inputChannelData,
                                         int numSamples 
     )  
 {
+
     if(numInputChannels == numOutputChannels)
     {
-        for (int i = 0; i < numInputChannels; i++)
+        for (int test = 0; test < 1000; test++)
         {
-            for (int j = 0; j < numSamples; j++)
+            for (int i = 0; i < numInputChannels; i++)
             {
-                outputChannelData[i][j] = inputChannelData[i][j] * dry.get();
+                for (int j = 0; j < numSamples; j++)
+                {
+                    outputChannelData[i][j] = inputChannelData[i][j] * dry.get();
+                }
             }
         }
     }
@@ -60,7 +64,7 @@ int main (int argc, char* argv[])
     //AudioDeviceSetup deviceSetup = getAudioDeviceSetup();
     cout << deviceManager.getCurrentAudioDeviceType() << endl; 
     deviceManager.setCurrentAudioDeviceType("JACK", true); 
-    deviceManager.setMidiInputEnabled("Midi Through", true);
+    deviceManager.setMidiInputEnabled("f_midi", true);
     cout << deviceManager.getCurrentAudioDeviceType() << endl; 
 
     myCallback* callback = new myCallback();
